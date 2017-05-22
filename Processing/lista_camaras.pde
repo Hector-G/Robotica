@@ -24,4 +24,8 @@ void draw() {
   image(video,0,0);
   
 }
+
+void captureEvent(Capture c) {
+  c.read();
+}
  
