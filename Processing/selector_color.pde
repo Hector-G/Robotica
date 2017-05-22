@@ -11,6 +11,8 @@ color c; //Las variables tipo color guardan 3 datos, con los valores de los cana
 
 void setup() {  
   size(640, 480);
+ 
+  video = new Capture(this, 640, 480, Capture.list()[0]);
   
   video.start();
 }
