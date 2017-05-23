@@ -33,6 +33,9 @@ void setup() {
         CASCADE_LOWERBODY
         CASCADE_PEDESTRIAN
         CASCADE_PEDESTRIANS
+        
+    Para pasar cualquier otro archivo cascade, indicar la ruta del archivo y true como segundo argumento:
+    opencv.loadCascade("path/to/my/custom/cascade.xml", true)
   */
 
   video.start();
