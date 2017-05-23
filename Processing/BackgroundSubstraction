@@ -1,0 +1,47 @@
+/*
+Sensor de movimiento por eliminación de fondo estático
+*/
+
+import gab.opencv.*;
+import processing.video.*;
+
+Capture video; //Video de entrada
+OpenCV opencv; //objeto opencv para procesar imagen
+PImage edit;   //imagen editada
+
+void setup() {
+  size(640, 480);
+  String[] cameras = Capture.list();
+  video = new Capture(this, 640,480, cameras[24]);
+  opencv = new OpenCV(this, 640, 480);
+  
+  opencv.startBackgroundSubtraction(5, 3, 0.5);
+  //startBackgroundSubtraction(int history, int nMixtures, double backgroundRatio)
+  
+  video.start();
+}
+
+void draw() {
+  image(video, 0, 0);  
+  opencv.loadImage(video);
+  
+  opencv.updateBackground();
+  
+  opencv.erode();
+  opencv.dilate();
+  
+  edit = opencv.getSnapshot(); //convertir opencv en imagen
+  tint(192, 186, 23); //Esto es solo para poner colores chulos :D
+  image(edit,0,0);
+
+  noFill();
+  stroke(204,60, 46);
+  strokeWeight(3);
+  for (Contour contour : opencv.findContours()) {
+    contour.draw();
+  }
+}
+
+void captureEvent(Capture video) {
+  video.read();
+}
