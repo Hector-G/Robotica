@@ -22,5 +22,22 @@
   
   - [plantilla_arduino_firmata](https://github.com/Hector-G/Robotica/blob/master/Processing/plantilla_arduino_firmata.pde) Sketch de ejemplo de conexión de Arduino con Processing mediante USB con el protocolo Firmata.
   
+  ---------
+  
+  - [color tracking 1](https://github.com/Hector-G/Robotica/blob/master/Processing/color_tracking01.pde) Detección de pixeles similares a un color dado.
+  
+  - [blob tracking](https://github.com/Hector-G/Robotica/tree/master/Processing/colorBlobs) Agrupamos los pixeles del mismo color para definir objetos.
+  
+  - [Background Substraction](https://github.com/Hector-G/Robotica/blob/master/Processing/BackgroundSubstraction) Utilizamos una secuencia de imágenes para eliminar el fondo y detectar objetos en movimiento.
+  
+### OpenCV
+
+  - [OpenCV.org](http://opencv.org/)
+  
+  - [OpenCV for Processing](https://github.com/atduskgreg/opencv-processing) Biblioteca específica para Processing
+  
+  - [OpenCV documentation](http://docs.opencv.org/2.4/doc/tutorials/tutorials.html) Tutoriales de Visión Artificial. Utiliza principalmente los lenguajes C y Python
+  
+  
   
   
