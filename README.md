@@ -30,6 +30,12 @@
   
   - [Background Substraction](https://github.com/Hector-G/Robotica/blob/master/Processing/BackgroundSubstraction) Utilizamos una secuencia de imágenes para eliminar el fondo y detectar objetos en movimiento.
   
+  --------
+  
+  - [Ejercicio. Sensor de movimiento](https://github.com/Hector-G/Robotica/blob/master/Processing/ejercicio_sensor_movimiento.pde) Combina ejemplos anteriores para detectar la dirección del movimiento.
+  
+  - [OpticalFlow](https://github.com/Hector-G/Robotica/blob/master/Processing/OpticalFlow) Uso de la biblioteca OpenCV para obtener un resultado similar al del ejercicio.
+  
 ### OpenCV
 
   - [OpenCV.org](http://opencv.org/)
