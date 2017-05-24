@@ -6,6 +6,8 @@
 
 * [MakersUPV - Ejercicios básicos con Arduino](https://github.com/Hector-G/taller_arduino_01)
 
+* [Driver L298N](https://github.com/Hector-G/Robotica/blob/master/Hardware/motores.md) Pequeña guía de uso para controlar motores CC con Arduino.
+
 
 ### Processing
 * [Processing Reference](https://processing.org/reference/)
