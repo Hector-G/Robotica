@@ -8,6 +8,8 @@
 
 * [Driver L298N](https://github.com/Hector-G/Robotica/blob/master/Hardware/motores.md) Pequeña guía de uso para controlar motores CC con Arduino.
 
+* [Control de movimiento](https://github.com/Hector-G/Robotica/blob/master/Hardware/control_giro.md) Breve guía para realizar el control de los motores por software. Cálculo de la velocidad diferencial de las ruedas para tomar las curvas. 
+
 
 ### Processing
 * [Processing Reference](https://processing.org/reference/)
