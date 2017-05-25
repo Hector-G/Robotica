@@ -84,3 +84,74 @@ void izquierda(int velocidad){
 
 Así el robot giraría sobre su propio centro pudiendo controlar la velocidad a la que rota.
 
+---------
+
+**\*\*\*\*\*** **EXPERIMENTAL** **\*\*\*\*\***
+
+**Aviso: El siguiente código no está comprobado.**
+
+Utilizando la ecuación anterior se pueden trazar distintos tipos de curvas. Las funciones que hay a continuación servirían para tomar una curva a una velocidad dada, con un radio de giro determinado. A nivel teórico, si el radio de giro es 0, se tiene el caso del ejemplo anterior en el que el robot gira sobre su propio centro. Cuando el radio es muy grande, con un radio infinito se obtendría una trayectoria en linea recta.
+
+Los parámetros que hay que pasar al código son:
+
+ - La separación entre ruedas, L
+  	
+ ```arduino
+  float L_ENTRE_RUEDAS = 1.0; //Separación entre ruedas
+```
+
+ - La velocidad de avance, en porcentaje. Los valores posibles van entre +100 (adelante) y -100 (marcha atrás)
+ 
+ - El radio de giro, en las mismas unidades que hemos definido L
+ 
+ ```arduino
+  void izquierda_R(float R, float velocidad){
+  if((velocidad >= -100.0) && (velocidad <= 100.0)){
+     int VD = int(velocidad);
+     int VI = int(VD*(2*R/L_ENTRE_RUEDAS-1)/(2*R/L_ENTRE_RUEDAS+1));
+     if(VD >= 0){
+        arduino.analogWrite(PIN_FD, VD);
+        arduino.analogWrite(PIN_TD, 0);
+     }
+     else{
+        arduino.analogWrite(PIN_FD, 0);
+        arduino.analogWrite(PIN_TD, -VD);
+     }
+     if(VI >= 0){
+        arduino.analogWrite(PIN_FD, VI);
+        arduino.analogWrite(PIN_TD, 0);
+     }
+     else{
+        arduino.analogWrite(PIN_FD, 0);
+        arduino.analogWrite(PIN_TD, -VI);
+     }
+  }
+}
+```
+
+```arduino
+  void derecha_R(float R, float velocidad){
+  if((velocidad >= -100.0) && (velocidad <= 100.0)){
+     int VI = int(velocidad);
+     int VD = int(VI*(2*R/L_ENTRE_RUEDAS-1)/(2*R/L_ENTRE_RUEDAS+1));
+     if(VD >= 0){
+        arduino.analogWrite(PIN_FD, VD);
+        arduino.analogWrite(PIN_TD, 0);
+     }
+     else{
+        arduino.analogWrite(PIN_FD, 0);
+        arduino.analogWrite(PIN_TD, -VD);
+     }
+     if(VI >= 0){
+        arduino.analogWrite(PIN_FD, VI);
+        arduino.analogWrite(PIN_TD, 0);
+     }
+     else{
+        arduino.analogWrite(PIN_FD, 0);
+        arduino.analogWrite(PIN_TD, -VI);
+     }
+  }
+}
+```
+
+**\*\*\*\*\*\*\*\*\*\*\*\*\*\*\***
